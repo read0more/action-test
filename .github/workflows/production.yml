@@ -4,16 +4,13 @@ on:
   push:
     branches: 
       - master
-  pull_request:
-    types: [closed]
-    branches:
-      - master
+    tags:
+      - '*'
 
   workflow_dispatch:
 
 jobs:
   deploy:    
-    if: github.event_name == 'push' || (github.event.pull_request.merged == true && github.ref == 'refs/heads/main')
     runs-on: ubuntu-20.04
     strategy:
       matrix:
