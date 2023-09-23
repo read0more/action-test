@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    types: [opened, reopened]
-    branches:
-      - master
-
+      
   workflow_dispatch:
 
 jobs:
